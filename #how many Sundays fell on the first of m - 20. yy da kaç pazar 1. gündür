@@ -1,0 +1,8 @@
+#how many Sundays fell on the first of month during twentieh century(1 Jan 1901 to 31 Dec 2000 )  
+#20. yüzyılda kaç sefer bi ayın ilk günü pazar olur?
+pazar_sayısı = 0
+for yıl in range(1901,2001):
+    for ay in range(1,13):
+        if datetime(yıl,ay,1).weekday() == 6:
+            pazar_sayısı +=1
+print(pazar_sayısı)            
