@@ -1,0 +1,32 @@
+# Configuration for breast cancer to lung cancer transfer learning
+
+# Model settings
+num_classes: 2
+backbone: 'resnet50'
+pretrained: true
+use_domain_adapt: true
+
+# Training settings
+epochs: 100
+batch_size: 16
+lr: 0.001
+scheduler: 'cosine'
+min_lr: 0.00001
+weight_decay: 0.0001
+clip_grad: 1.0
+num_workers: 4
+
+# Domain adaptation
+lambda_domain: 1.0
+lambda_consistency: 0.1
+alpha: 1.0
+
+# Class weights
+class_weight: null
+
+# Paths
+source_domain: 'breast_cancer'
+target_domain: 'lung_cancer'
+save_dir: 'checkpoints/breast_to_lung'
+log_dir: 'runs/breast_to_lung'
+

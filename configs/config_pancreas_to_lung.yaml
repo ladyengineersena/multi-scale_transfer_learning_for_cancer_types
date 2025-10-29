@@ -1,0 +1,32 @@
+# Configuration for pancreas to lung cancer histopathology transfer learning
+
+# Model settings
+num_classes: 2
+backbone: 'resnet50'
+pretrained: true
+use_domain_adapt: true
+
+# Training settings
+epochs: 100
+batch_size: 16
+lr: 0.001
+scheduler: 'cosine'
+min_lr: 0.00001
+weight_decay: 0.0001
+clip_grad: 1.0
+num_workers: 4
+
+# Domain adaptation
+lambda_domain: 0.8
+lambda_consistency: 0.1
+alpha: 1.0
+
+# Class weights
+class_weight: null
+
+# Paths
+source_domain: 'pancreas'
+target_domain: 'lung_cancer'
+save_dir: 'checkpoints/pancreas_to_lung'
+log_dir: 'runs/pancreas_to_lung'
+
